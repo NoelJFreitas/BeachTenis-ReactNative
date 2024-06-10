@@ -12,6 +12,12 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		5906D26A2C1777E800C96B94 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5906D2642C1777E800C96B94 /* Raleway-Regular.ttf */; };
+		5906D26B2C1777E800C96B94 /* Raleway-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5906D2652C1777E800C96B94 /* Raleway-Black.ttf */; };
+		5906D26C2C1777E800C96B94 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5906D2662C1777E800C96B94 /* Raleway-SemiBold.ttf */; };
+		5906D26D2C1777E800C96B94 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5906D2672C1777E800C96B94 /* Raleway-Bold.ttf */; };
+		5906D26E2C1777E800C96B94 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5906D2682C1777E800C96B94 /* Raleway-Medium.ttf */; };
+		5906D26F2C1777E800C96B94 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5906D2692C1777E800C96B94 /* Raleway-Light.ttf */; };
 		60B374B92447219E9D5F4706 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D57FC679ED31C259A8CF02DC /* PrivacyInfo.xcprivacy */; };
 		7699B88040F8A987B510C191 /* libPods-beachTenis-beachTenisTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-beachTenis-beachTenisTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -41,11 +47,17 @@
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-beachTenis-beachTenisTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-beachTenis-beachTenisTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-beachTenis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beachTenis.debug.xcconfig"; path = "Target Support Files/Pods-beachTenis/Pods-beachTenis.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-beachTenis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beachTenis.release.xcconfig"; path = "Target Support Files/Pods-beachTenis/Pods-beachTenis.release.xcconfig"; sourceTree = "<group>"; };
+		5906D2642C1777E800C96B94 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "../src/assets/fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		5906D2652C1777E800C96B94 /* Raleway-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Black.ttf"; path = "../src/assets/fonts/Raleway-Black.ttf"; sourceTree = "<group>"; };
+		5906D2662C1777E800C96B94 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-SemiBold.ttf"; path = "../src/assets/fonts/Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		5906D2672C1777E800C96B94 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Bold.ttf"; path = "../src/assets/fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		5906D2682C1777E800C96B94 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Medium.ttf"; path = "../src/assets/fonts/Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		5906D2692C1777E800C96B94 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Light.ttf"; path = "../src/assets/fonts/Raleway-Light.ttf"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-beachTenis-beachTenisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beachTenis-beachTenisTests.debug.xcconfig"; path = "Target Support Files/Pods-beachTenis-beachTenisTests/Pods-beachTenis-beachTenisTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-beachTenis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-beachTenis.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = beachTenis/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-beachTenis-beachTenisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beachTenis-beachTenisTests.release.xcconfig"; path = "Target Support Files/Pods-beachTenis-beachTenisTests/Pods-beachTenis-beachTenisTests.release.xcconfig"; sourceTree = "<group>"; };
-		D57FC679ED31C259A8CF02DC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = beachTenis/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		D57FC679ED31C259A8CF02DC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = beachTenis/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -89,6 +101,7 @@
 		13B07FAE1A68108700A75B9A /* beachTenis */ = {
 			isa = PBXGroup;
 			children = (
+				5906D2632C1777DB00C96B94 /* fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -109,6 +122,19 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-beachTenis-beachTenisTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5906D2632C1777DB00C96B94 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5906D2652C1777E800C96B94 /* Raleway-Black.ttf */,
+				5906D2672C1777E800C96B94 /* Raleway-Bold.ttf */,
+				5906D2692C1777E800C96B94 /* Raleway-Light.ttf */,
+				5906D2682C1777E800C96B94 /* Raleway-Medium.ttf */,
+				5906D2642C1777E800C96B94 /* Raleway-Regular.ttf */,
+				5906D2662C1777E800C96B94 /* Raleway-SemiBold.ttf */,
+			);
+			name = fonts;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -246,9 +272,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5906D26D2C1777E800C96B94 /* Raleway-Bold.ttf in Resources */,
+				5906D26E2C1777E800C96B94 /* Raleway-Medium.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				60B374B92447219E9D5F4706 /* PrivacyInfo.xcprivacy in Resources */,
+				5906D26C2C1777E800C96B94 /* Raleway-SemiBold.ttf in Resources */,
+				5906D26F2C1777E800C96B94 /* Raleway-Light.ttf in Resources */,
+				5906D26A2C1777E800C96B94 /* Raleway-Regular.ttf in Resources */,
+				5906D26B2C1777E800C96B94 /* Raleway-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,10 +622,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -665,10 +694,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
