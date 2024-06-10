@@ -5,9 +5,13 @@ import {ThemeColors} from '@theme';
 import {useAppTheme} from '@hooks';
 
 import {ReturnIcon} from '../../assets/icons/ReturnIcon';
+import {EyeOnIcon} from '../../assets/icons/EyeOnIcon';
+import {EyeOffIcon} from '../../assets/icons/EyeOffIcon';
 
 const iconsRegistry = {
   return: ReturnIcon,
+  eyeOn: EyeOnIcon,
+  eyeOff: EyeOffIcon,
 };
 
 export type IconNames = keyof typeof iconsRegistry;

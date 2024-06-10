@@ -1,15 +1,15 @@
-import {Text} from '@components';
+import {LoginScreen} from '@screens';
 import {ThemeProvider} from '@shopify/restyle';
 import {theme} from '@theme';
 import React from 'react';
-import {View} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Teste</Text>
-      </View>
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider theme={theme}>
+        <LoginScreen />
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }

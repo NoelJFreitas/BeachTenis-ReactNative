@@ -1,5 +1,6 @@
 export const palette = {
   orangePrimary: '#DD6A4C',
+  orangePrimaryLight: '#FCF4F3',
 
   redError: '#EA3838',
   redErrorLight: '#eb5e5e',
