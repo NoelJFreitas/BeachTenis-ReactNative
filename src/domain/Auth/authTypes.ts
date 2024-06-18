@@ -16,6 +16,7 @@ export interface AuthCredentialsAPI {
 export interface AuthCredentials {
   token: string;
   user: {
+    id: number;
     email: string;
     firstName: string;
     lastName: string;

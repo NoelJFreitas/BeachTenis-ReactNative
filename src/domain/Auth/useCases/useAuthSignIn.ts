@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {authService} from '../authService';
 import {Alert} from 'react-native';
+import {useAuthCredentials} from '@services';
 
 interface Options {
   onSuccess?: () => void;
@@ -13,11 +14,13 @@ interface SignIn {
 
 export function useAuthSignIn({onSuccess}: Options) {
   const [isLoading, setIsLoading] = useState(false);
+  const {saveCredentials} = useAuthCredentials();
+
   async function signIn({email, password}: SignIn) {
     try {
       setIsLoading(true);
       const response = await authService.signIn(email, password);
-      console.log(response);
+      saveCredentials(response);
       onSuccess ? onSuccess() : undefined;
     } catch (error) {
       console.log(error);
