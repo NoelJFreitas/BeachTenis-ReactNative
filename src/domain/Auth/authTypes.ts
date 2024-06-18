@@ -9,7 +9,7 @@ export interface AuthCredentialsAPI {
 
     avatar: {
       url: string;
-    };
+    } | null;
   };
 }
 
@@ -21,6 +21,12 @@ export interface AuthCredentials {
     firstName: string;
     lastName: string;
     createAt: number;
-    avatar: string;
+    avatar: string | undefined;
   };
+}
+export interface SignUpDataApi {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
 }

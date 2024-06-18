@@ -1,6 +1,6 @@
 import {authAdapter} from './authAdapter';
 import {authApi} from './authApi';
-import {AuthCredentials} from './authTypes';
+import {AuthCredentials, SignUpDataApi} from './authTypes';
 
 async function signIn(
   email: string,
@@ -15,6 +15,11 @@ async function signIn(
   }
 }
 
+async function signUp(data: SignUpDataApi) {
+  await authApi.signUp(data);
+}
+
 export const authService = {
   signIn,
+  signUp,
 };

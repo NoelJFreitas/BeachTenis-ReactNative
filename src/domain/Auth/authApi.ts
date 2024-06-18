@@ -1,5 +1,5 @@
 import {api} from '@api';
-import {AuthCredentialsAPI} from './authTypes';
+import {AuthCredentialsAPI, SignUpDataApi} from './authTypes';
 
 async function signIn(
   email: string,
@@ -12,6 +12,12 @@ async function signIn(
   return response.data;
 }
 
+async function signUp(data: SignUpDataApi) {
+  const response = await api.post('auth/signup', data);
+  return response;
+}
+
 export const authApi = {
   signIn,
+  signUp,
 };

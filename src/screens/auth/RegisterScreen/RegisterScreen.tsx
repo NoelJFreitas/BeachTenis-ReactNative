@@ -10,6 +10,8 @@ import {RegisterSchema, registerSchema} from './registerSchema';
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {AuthScreenProps} from '@routes';
+import {useAuthSignUp} from '@domain';
+import {useResetNavigationSuccess} from '@hooks';
 
 export function RegisterScreen({
   navigation,
@@ -25,7 +27,15 @@ export function RegisterScreen({
     mode: 'onChange',
   });
 
-  function submitForm() {}
+  const {reset} = useResetNavigationSuccess();
+
+  const {signUp, isLoading} = useAuthSignUp({
+    onSuccess: reset,
+  });
+
+  async function submitForm(data: RegisterSchema) {
+    await signUp(data);
+  }
 
   function navigationToLogin() {
     navigation.navigate('LoginScreen');
@@ -74,6 +84,7 @@ export function RegisterScreen({
         mt="s30"
         onPress={handleSubmit(submitForm)}
         disabled={!formState.isValid}
+        loading={isLoading}
       />
 
       <Text textAlign="center" mt="s30" preset="paragraphSmall">
