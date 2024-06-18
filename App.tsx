@@ -1,14 +1,15 @@
-import {RegisterScreen, LoginScreen} from '@screens';
-import {ThemeProvider} from '@shopify/restyle';
-import {theme} from '@theme';
 import React from 'react';
+import {ThemeProvider} from '@shopify/restyle';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+
+import {theme} from '@theme';
+import {Routes} from '@routes';
 
 export default function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
-        <RegisterScreen />
+        <Routes />
       </ThemeProvider>
     </SafeAreaProvider>
   );
