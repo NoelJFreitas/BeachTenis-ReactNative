@@ -9,8 +9,11 @@ import {
 import {RegisterSchema, registerSchema} from './registerSchema';
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
+import {AuthScreenProps} from '@routes';
 
-export function RegisterScreen() {
+export function RegisterScreen({
+  navigation,
+}: AuthScreenProps<'RegisterScreen'>) {
   const {control, formState, handleSubmit} = useForm<RegisterSchema>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
@@ -24,8 +27,12 @@ export function RegisterScreen() {
 
   function submitForm() {}
 
+  function navigationToLogin() {
+    navigation.navigate('LoginScreen');
+  }
+
   return (
-    <Screen>
+    <Screen justifyContent="center">
       <Text preset="headingLarge" textAlign="center" bold mb="s15">
         Registre-se
       </Text>
@@ -71,7 +78,7 @@ export function RegisterScreen() {
 
       <Text textAlign="center" mt="s30" preset="paragraphSmall">
         Já possui uma conta?{' '}
-        <Text preset="paragraphSmall" bold onPress={() => {}}>
+        <Text preset="paragraphSmall" bold onPress={navigationToLogin}>
           Acesse!
         </Text>
       </Text>

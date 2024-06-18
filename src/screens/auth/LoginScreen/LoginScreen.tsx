@@ -16,8 +16,9 @@ import {FormTextInput} from '@components';
 
 import {LoginSchema, loginSchema} from './loginSchema';
 import {useAuthSignIn} from '@domain';
+import {AuthScreenProps} from '@routes';
 
-export function LoginScreen() {
+export function LoginScreen({navigation}: AuthScreenProps<'LoginScreen'>) {
   const {control, formState, handleSubmit} = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -39,10 +40,7 @@ export function LoginScreen() {
   }
 
   function navigateToSignUp() {
-    // navigation.reset({
-    //   index: 1,
-    //   routes: [{name: 'SignUpZeroScreen'}],
-    // });
+    navigation.navigate('RegisterScreen');
   }
 
   return (
