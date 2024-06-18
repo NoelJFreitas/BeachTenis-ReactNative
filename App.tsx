@@ -1,4 +1,4 @@
-import {LoginScreen} from '@screens';
+import {RegisterScreen, LoginScreen} from '@screens';
 import {ThemeProvider} from '@shopify/restyle';
 import {theme} from '@theme';
 import React from 'react';
@@ -8,7 +8,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
-        <LoginScreen />
+        <RegisterScreen />
       </ThemeProvider>
     </SafeAreaProvider>
   );

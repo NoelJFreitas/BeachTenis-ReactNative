@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Box, BoxProps, Icon, ScreenProps, Text} from '@components';
-import {useNavigation} from '@react-navigation/native';
+// import {useNavigation} from '@react-navigation/native';
 
 type ScreenHeaderProps = Pick<
   ScreenProps,
@@ -16,12 +16,12 @@ export function ScreenHeader({
   ...boxProps
 }: ScreenHeaderProps) {
   const headerShow = title || canGoBack || headerComponent;
-  const navigation = useNavigation();
-  const goBack = () => navigation.goBack();
+  // const navigation = useNavigation();
+  // const goBack = () => navigation.goBack();
 
   return (
     <Box flexDirection="row" mb={headerShow ? 's25' : undefined} {...boxProps}>
-      {canGoBack && <Icon name="return" onPress={goBack} />}
+      {canGoBack && <Icon name="return" onPress={() => {}} />}
       {title && (
         <Box flex={1} alignItems="center" mr={canGoBack ? 's25' : undefined}>
           <Text semibold>{title}</Text>
