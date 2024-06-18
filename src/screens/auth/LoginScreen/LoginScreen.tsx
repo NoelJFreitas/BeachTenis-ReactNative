@@ -15,12 +15,9 @@ import {
 import {FormTextInput} from '@components';
 
 import {LoginSchema, loginSchema} from './loginSchema';
-// import {useAuthSignIn} from '@domain';
-// import {AuthScreenProps} from '@routes';
+import {useAuthSignIn} from '@domain';
 
 export function LoginScreen() {
-  const [rememberMe, setRememberMe] = useState(true);
-  // const {signIn, isLoading} = useAuthSignIn();
   const {control, formState, handleSubmit} = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -30,13 +27,15 @@ export function LoginScreen() {
     mode: 'onChange',
   });
 
+  const [rememberMe, setRememberMe] = useState(true);
+  const {signIn, isLoading} = useAuthSignIn({onSuccess: () => {}});
+
   function handleSetRememberMe() {
     setRememberMe(prev => !prev);
   }
 
   async function submitForm({email, password}: LoginSchema) {
-    // await signIn({email, password});
-    console.log({email, password});
+    await signIn({email, password});
   }
 
   function navigateToSignUp() {
@@ -85,6 +84,7 @@ export function LoginScreen() {
         title="Acessar"
         disabled={!formState.isValid}
         onPress={handleSubmit(submitForm)}
+        loading={isLoading}
       />
       <SocialButtons
         socialNetworkNames={['apple', 'facebook', 'google']}
