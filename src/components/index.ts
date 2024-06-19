@@ -12,3 +12,6 @@ export * from './PasswordInput/PasswordInput';
 export * from './PasswordInput/PasswordInput';
 export * from './Form/FormPasswordInput';
 export * from './Form/FormTextInput';
+export * from './Statistics/Statistics';
+export * from './Ranking/Ranking';
+export * from './FlatList/FlatList';
