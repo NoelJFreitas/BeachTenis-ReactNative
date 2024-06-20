@@ -7,12 +7,15 @@ import {
 } from '@components';
 import {$shadowProps} from '@theme';
 import {Match} from '@domain';
+import {useTimestamp} from '@hooks';
 
 interface NextMatchesItemProps extends TouchableOpacityBoxProps {
   match: Match;
 }
 
 export function GameListItem({match, ...touchableProps}: NextMatchesItemProps) {
+  const {day, hour, minute, stringMonth} = useTimestamp(match.date);
+
   return (
     <TouchableOpacityBox
       activeOpacity={0.7}
@@ -31,9 +34,9 @@ export function GameListItem({match, ...touchableProps}: NextMatchesItemProps) {
           justifyContent="center"
           alignItems="center"
           borderRadius="r10">
-          <Text color="grayWhite">Junho</Text>
+          <Text color="grayWhite">{stringMonth}</Text>
           <Text bold preset="paragraphLarge" color="grayWhite">
-            29
+            {day}
           </Text>
         </Box>
       </Box>
@@ -45,7 +48,7 @@ export function GameListItem({match, ...touchableProps}: NextMatchesItemProps) {
           <Text preset="paragraphCaption">{match.description}</Text>
         </Box>
         <Text preset="paragraphSmall" semibold>
-          12:00 - {match.vacancies} Vagas
+          {hour}:{minute} - {match.vacancies} Vagas
         </Text>
       </Box>
     </TouchableOpacityBox>
