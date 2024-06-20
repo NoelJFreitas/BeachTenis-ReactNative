@@ -12,6 +12,14 @@ import {MedalIcon} from '../../assets/icons/MedalIcon';
 import {DislikeIcon} from '../../assets/icons/DislikeIcon';
 import {HandsIcon} from '../../assets/icons/HandsIcon';
 import {RacketIcon} from '../../assets/icons/RacketIcon';
+import {HomeOutlineIcon} from '../../assets/icons/HomeOutlineIcon';
+import {HomeIcon} from '../../assets/icons/HomeIcon';
+import {UserIcon} from '../../assets/icons/UserIcon';
+import {UserOutlineIcon} from '../../assets/icons/UserOutlineIcon';
+import {CalendarOutlineIcon} from '../../assets/icons/CalendarOutlineIcon';
+import {CalendarIcon} from '../../assets/icons/CalendarIcon';
+import {ClipboardIcon} from '../../assets/icons/ClipboardIcon';
+import {ClipboardOutlineIcon} from '../../assets/icons/ClipboardOutlineIcon';
 
 const iconsRegistry = {
   return: ReturnIcon,
@@ -22,6 +30,14 @@ const iconsRegistry = {
   dislike: DislikeIcon,
   hands: HandsIcon,
   racket: RacketIcon,
+  user: UserIcon,
+  userOutline: UserOutlineIcon,
+  calendar: CalendarIcon,
+  calendarOutline: CalendarOutlineIcon,
+  clipboard: ClipboardIcon,
+  clipboardOutline: ClipboardOutlineIcon,
+  home: HomeIcon,
+  homeOutline: HomeOutlineIcon,
 };
 
 export type IconNames = keyof typeof iconsRegistry;

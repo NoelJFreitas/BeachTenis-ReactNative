@@ -1,7 +1,7 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {AuthStack} from './AuthStack';
-import {AppStack} from './AppStack';
+import {AppStack} from './AppTab';
 import {ActivityIndicator, Box} from '@components';
 import {ViewStyle} from 'react-native';
 import {useAuthCredentials} from '@services';
