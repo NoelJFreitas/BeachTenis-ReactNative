@@ -20,6 +20,9 @@ import {CalendarOutlineIcon} from '../../assets/icons/CalendarOutlineIcon';
 import {CalendarIcon} from '../../assets/icons/CalendarIcon';
 import {ClipboardIcon} from '../../assets/icons/ClipboardIcon';
 import {ClipboardOutlineIcon} from '../../assets/icons/ClipboardOutlineIcon';
+import {SettingsIcon} from '../../assets/icons/SettingsIcon';
+import {HeartOutlineIcon} from '../../assets/icons/HeartOutlineIcon';
+import {LogoutIcon} from '../../assets/icons/LogoutIcon';
 
 const iconsRegistry = {
   return: ReturnIcon,
@@ -38,6 +41,9 @@ const iconsRegistry = {
   clipboardOutline: ClipboardOutlineIcon,
   home: HomeIcon,
   homeOutline: HomeOutlineIcon,
+  settings: SettingsIcon,
+  heart: HeartOutlineIcon,
+  logout: LogoutIcon,
 };
 
 export type IconNames = keyof typeof iconsRegistry;
