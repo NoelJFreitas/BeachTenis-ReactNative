@@ -15,5 +15,4 @@ export * from './Form/FormTextInput';
 export * from './Statistics/Statistics';
 export * from './Ranking/Ranking';
 export * from './FlatList/FlatList';
-export * from './NextMatches/NextMatches';
-export * from './NextMatchesFake/NextMatchesFake';
+export * from './GameList/GameList';

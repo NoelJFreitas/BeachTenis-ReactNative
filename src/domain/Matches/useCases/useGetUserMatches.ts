@@ -5,8 +5,8 @@ import {Match} from '../matchesType';
 
 export function useGetUserMatches() {
   const {userId} = useAuthCredentials();
-  const [isLoading, setIsLoading] = useState(true);
-  const [userMatches, setUserMatches] = useState<Match[]>();
+  const [isLoading, setIsLoading] = useState(false);
+  const [userMatches, setUserMatches] = useState<Match[]>([]);
 
   async function getUserMatches() {
     try {
@@ -28,5 +28,6 @@ export function useGetUserMatches() {
   return {
     isLoading,
     userMatches,
+    getUserMatches,
   };
 }

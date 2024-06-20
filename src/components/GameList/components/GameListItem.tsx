@@ -7,7 +7,7 @@ interface NextMatchesItemProps {
   match: Match;
 }
 
-export function NextMatchesItem({}: NextMatchesItemProps) {
+export function GameListItem({}: NextMatchesItemProps) {
   return (
     <Box
       height={90}

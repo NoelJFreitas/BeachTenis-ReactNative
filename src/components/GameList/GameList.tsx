@@ -2,23 +2,31 @@ import React from 'react';
 import {Box, BoxProps, FlatList} from '@components';
 
 import {ListRenderItemInfo, ViewStyle} from 'react-native';
-import {Match, useGetUserMatches} from '@domain';
-import {NextMatchesItem} from './components/NexMatchesItem';
+import {GameListItem} from './components/GameListItem';
+import {Match} from '@domain';
 
-interface NextMatchesProps extends BoxProps {}
+interface NextMatchesProps extends BoxProps {
+  emptyMessage: string;
+  onPress?: () => void;
+  matches: Match[];
+  isLoading: boolean;
+}
 
-export function NextMatches({...boxProps}: NextMatchesProps) {
-  const {userMatches, isLoading} = useGetUserMatches();
-
+export function GameList({
+  emptyMessage,
+  matches,
+  isLoading,
+  ...boxProps
+}: NextMatchesProps) {
   function renderItem({item}: ListRenderItemInfo<Match>) {
-    return <NextMatchesItem match={item} />;
+    return <GameListItem match={item} />;
   }
 
   return (
     <Box {...boxProps}>
       <FlatList
-        emptyMessage="Suas inscrições de jogos aparecerão aqui"
-        data={userMatches}
+        emptyMessage={emptyMessage}
+        data={matches}
         renderItem={renderItem}
         style={$overflow}
         isLoading={isLoading}
