@@ -1,43 +1,45 @@
-import {BoxProps, FlatList} from '@components';
-import {Ranking as RankingType} from '@domain';
 import React from 'react';
-import {ListRenderItemInfo} from 'react-native';
+import {FlatList, ListRenderItemInfo, ViewStyle} from 'react-native';
+
+import {Ranking as RankingType} from '@domain';
+import {Box, BoxProps} from '@components';
+
 import {RankingItem} from './components/rankingItem';
 import {RankingHeader} from './components/RankingHeader';
 
 interface RankingProps extends BoxProps {
-  ranking: RankingType[];
+  // ranking: RankingType[];
 }
 
 const rank: RankingType[] = [
   {
     avatar: '',
-    name: 'Noel',
+    name: 'Jhon Doe',
     rank: 1,
-    victories: 10,
+    victories: 25,
   },
   {
     avatar: '',
-    name: 'Pedro',
+    name: 'Jhon Doe',
     rank: 2,
     victories: 10,
   },
   {
     avatar: '',
-    name: 'Pedro',
-    rank: 2,
+    name: 'Jhon Doe',
+    rank: 3,
     victories: 10,
   },
   {
     avatar: '',
-    name: 'Pedro',
-    rank: 2,
+    name: 'Jhon Doe',
+    rank: 4,
     victories: 10,
   },
   {
     avatar: '',
-    name: 'Pedro',
-    rank: 2,
+    name: 'Jhon Doe',
+    rank: 5,
     victories: 10,
   },
 ];
@@ -48,12 +50,18 @@ export function Ranking({...boxProps}: RankingProps) {
   }
 
   return (
-    <FlatList
-      {...boxProps}
-      scrollEnabled={false}
-      ListHeaderComponent={RankingHeader}
-      data={rank}
-      renderItem={renderItem}
-    />
+    <Box {...boxProps}>
+      <FlatList
+        scrollEnabled={false}
+        contentContainerStyle={$flatList}
+        ListHeaderComponent={RankingHeader}
+        data={rank}
+        renderItem={renderItem}
+      />
+    </Box>
   );
 }
+
+const $flatList: ViewStyle = {
+  gap: 12,
+};

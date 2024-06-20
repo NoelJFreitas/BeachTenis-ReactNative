@@ -1,9 +1,9 @@
-import {Ranking, Screen, Statistics, Text} from '@components';
+import {NextMatches, Ranking, Screen, Statistics, Text} from '@components';
 import React from 'react';
 
 export function HomeScreen() {
   return (
-    <Screen>
+    <Screen scrollable>
       <Text textAlign="center" preset="paragraphLarge" bold mb="s20">
         Meus Dados
       </Text>
@@ -11,7 +11,11 @@ export function HomeScreen() {
       <Text semibold mb="s15">
         Top 5 Jogadores
       </Text>
-      <Ranking />
+      <Ranking mb="s40" />
+      <Text semibold mb="s15">
+        Seus Jogos
+      </Text>
+      <NextMatches />
     </Screen>
   );
 }

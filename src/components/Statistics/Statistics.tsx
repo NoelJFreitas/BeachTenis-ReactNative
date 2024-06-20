@@ -1,6 +1,7 @@
 import React from 'react';
 import {Box, BoxProps} from '@components';
 import {StatisticItem} from './components/StatisticItem';
+import {$shadowProps} from '@theme';
 
 interface StatisticsProps extends BoxProps {}
 
@@ -15,6 +16,7 @@ export function Statistics({...boxProps}: StatisticsProps) {
       paddingHorizontal="s20"
       alignItems="center"
       flexDirection="row"
+      style={$shadowProps}
       {...boxProps}>
       <StatisticItem icon="medal" title="Vitórias" value={0} />
       <StatisticItem icon="dislike" title="Derrotas" value={0} />

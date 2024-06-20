@@ -1,6 +1,6 @@
 import React, {createContext, useEffect, useState} from 'react';
 import {AuthCredentialsService} from '../authenticationTypes';
-import {AuthCredentials} from '@domain';
+import {AuthCredentials, authService} from '@domain';
 import {authCredentialsStorage} from '../authCredentialsStorage';
 
 export const AuthCredentialsContext = createContext<AuthCredentialsService>({
@@ -8,6 +8,7 @@ export const AuthCredentialsContext = createContext<AuthCredentialsService>({
   isLoading: false,
   saveCredentials: async () => {},
   removeCredentials: async () => {},
+  userId: null,
 });
 
 export function AuthenticationProvider({children}: React.PropsWithChildren) {
@@ -23,6 +24,7 @@ export function AuthenticationProvider({children}: React.PropsWithChildren) {
     try {
       const ac = await authCredentialsStorage.get();
       if (ac) {
+        authService.updateToken(ac.token);
         setCredentials(ac);
       }
     } catch (error) {
@@ -33,6 +35,7 @@ export function AuthenticationProvider({children}: React.PropsWithChildren) {
   }
 
   async function saveCredentials(ac: AuthCredentials): Promise<void> {
+    authService.updateToken(ac.token);
     authCredentialsStorage.set(ac);
     setCredentials(ac);
   }
@@ -41,10 +44,12 @@ export function AuthenticationProvider({children}: React.PropsWithChildren) {
     authCredentialsStorage.remove();
     setCredentials(null);
   }
+  const userId = credentials?.user.id || null;
 
   return (
     <AuthCredentialsContext.Provider
       value={{
+        userId,
         credentials,
         isLoading,
         saveCredentials,

@@ -1,3 +1,4 @@
+import {api} from '@api';
 import {authAdapter} from './authAdapter';
 import {authApi} from './authApi';
 import {AuthCredentials, SignUpDataApi} from './authTypes';
@@ -19,7 +20,12 @@ async function signUp(data: SignUpDataApi) {
   await authApi.signUp(data);
 }
 
+function updateToken(token: string) {
+  api.defaults.headers.common.Authorization = `Bearer ${token}`;
+}
+
 export const authService = {
   signIn,
   signUp,
+  updateToken,
 };

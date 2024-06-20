@@ -21,6 +21,7 @@ export const theme = createTheme({
   },
   borderRadii: {
     r5: 5,
+    r10: 10,
     r15: 15,
     r30: 30,
   },
@@ -30,11 +31,15 @@ export const theme = createTheme({
 });
 
 export const $shadowProps: ViewStyle = {
-  elevation: 10,
   shadowColor: '#000',
-  shadowOpacity: 0.06,
-  shadowRadius: 12,
-  shadowOffset: {width: 0, height: -3},
+  shadowOffset: {
+    width: 0,
+    height: 2,
+  },
+  shadowOpacity: 0.23,
+  shadowRadius: 2.62,
+
+  elevation: 4,
 };
 
 export type Theme = typeof theme;
