@@ -45,7 +45,7 @@ export function GameListItem({match, ...touchableProps}: NextMatchesItemProps) {
           <Text semibold preset="paragraphSmall" mb="s5">
             {match.name}
           </Text>
-          <Text preset="paragraphCaption">{match.description}</Text>
+          <Text preset="paragraphCaption">{match.shortDescription}</Text>
         </Box>
         <Text preset="paragraphSmall" semibold>
           {hour}:{minute} - {match.vacancies} Vagas

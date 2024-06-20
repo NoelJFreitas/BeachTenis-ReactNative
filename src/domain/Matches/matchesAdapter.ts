@@ -16,6 +16,7 @@ function toAllMatches(data: MatchesApi[], userId: number): Match[] {
       description: match.description,
       eventPlace: match.events_place,
       vacancies: match.vacancies,
+      shortDescription: match.short_description,
       id: match.id,
       players: match.players.map(({user_id}) => user_id),
     });
@@ -39,6 +40,7 @@ function toUserMatches(data: MatchesApi[], userId: number): Match[] {
         eventPlace: match.events_place,
         vacancies: match.vacancies,
         id: match.id,
+        shortDescription: match.short_description,
         players: match.players.map(({user_id}) => user_id),
       }),
     );
