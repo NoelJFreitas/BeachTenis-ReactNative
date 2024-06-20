@@ -11,8 +11,6 @@ export function useGetAllMatches() {
   async function getAllMatches() {
     try {
       const response = await matchesService.getAllMatches(userId!);
-      console.log(userId);
-      console.log(response);
       setAllMatches(response);
       setIsLoading(true);
     } catch (erro) {

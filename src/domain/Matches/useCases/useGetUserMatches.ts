@@ -11,7 +11,6 @@ export function useGetUserMatches() {
   async function getUserMatches() {
     try {
       const response = await matchesService.getUserMatches(userId!);
-      console.log(response);
       setUserMatches(response);
       setIsLoading(true);
     } catch (erro) {

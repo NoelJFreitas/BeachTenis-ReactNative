@@ -9,7 +9,6 @@ async function signIn(
 ): Promise<AuthCredentials> {
   try {
     const authCredentialsAPI = await authApi.signIn(email, password);
-    console.log(authCredentialsAPI);
     return authAdapter.toAuthCredentials(authCredentialsAPI);
   } catch (error) {
     throw new Error('Usuário inválido');

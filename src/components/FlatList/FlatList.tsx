@@ -5,22 +5,22 @@ import {
   ViewStyle,
 } from 'react-native';
 
-import {ActivityIndicator, Box, Text} from '@components';
+import {ActivityIndicator, Box} from '@components';
+import {EmptyList} from './components/EmptyList';
 
 interface FlatListProps<ItemI> extends RNFlatListProps<ItemI> {
   isLoading?: boolean;
-  loadingMessage?: string;
+  emptyMessage: string;
 }
 
 export function FlatList<ItemI>({
   isLoading,
-  loadingMessage,
+  emptyMessage,
   ...flatListProps
 }: FlatListProps<ItemI>) {
   if (isLoading !== undefined && isLoading) {
     return (
-      <Box flex={1} justifyContent="center" alignItems="center">
-        <Text mb="s20">{loadingMessage}</Text>
+      <Box paddingVertical="s20" justifyContent="center" alignItems="center">
         <ActivityIndicator />
       </Box>
     );
@@ -30,6 +30,7 @@ export function FlatList<ItemI>({
     <RNFlatList
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
+      ListEmptyComponent={<EmptyList message={emptyMessage} />}
       style={$overflow}
       contentContainerStyle={$content}
       {...flatListProps}
@@ -41,5 +42,5 @@ const $overflow: ViewStyle = {
   overflow: 'visible',
 };
 const $content: ViewStyle = {
-  gap: 12,
+  gap: 15,
 };

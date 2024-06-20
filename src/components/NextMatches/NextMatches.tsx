@@ -17,6 +17,7 @@ export function NextMatches({...boxProps}: NextMatchesProps) {
   return (
     <Box {...boxProps}>
       <FlatList
+        emptyMessage="Suas inscrições de jogos aparecerão aqui"
         data={userMatches}
         renderItem={renderItem}
         style={$overflow}
