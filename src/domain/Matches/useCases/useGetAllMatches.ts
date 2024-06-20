@@ -12,7 +12,7 @@ export function useGetAllMatches() {
     try {
       const response = await matchesService.getAllMatches(userId!);
       setAllMatches(response);
-      console.log(response);
+      // console.log(response);
       setIsLoading(true);
     } catch (erro) {
       console.log(erro);
