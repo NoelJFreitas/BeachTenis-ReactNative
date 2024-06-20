@@ -10,6 +10,7 @@ export function GameListScreen() {
         Jogos disponíveis
       </Text>
       <GameList
+        mt="s30"
         matches={matches.allMatches}
         isLoading={matches.isLoading}
         emptyMessage="Suas inscrições de jogos aparecerão aqui"

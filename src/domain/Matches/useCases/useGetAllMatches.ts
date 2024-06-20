@@ -5,7 +5,7 @@ import {Match} from '../matchesType';
 
 export function useGetAllMatches() {
   const {userId} = useAuthCredentials();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [allMatches, setAllMatches] = useState<Match[]>([]);
 
   async function getAllMatches() {

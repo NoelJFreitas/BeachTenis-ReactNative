@@ -20,6 +20,7 @@ export function HomeScreen() {
 
       <GameList
         matches={matches.userMatches}
+        scrollEnabled={false}
         isLoading={matches.isLoading}
         emptyMessage="Suas inscrições de jogos aparecerão aqui"
       />

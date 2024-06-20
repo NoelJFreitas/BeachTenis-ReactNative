@@ -1,20 +1,27 @@
 import React from 'react';
-import {Box, Text} from '@components';
+import {
+  Box,
+  Text,
+  TouchableOpacityBox,
+  TouchableOpacityBoxProps,
+} from '@components';
 import {$shadowProps} from '@theme';
 import {Match} from '@domain';
 
-interface NextMatchesItemProps {
+interface NextMatchesItemProps extends TouchableOpacityBoxProps {
   match: Match;
 }
 
-export function GameListItem({}: NextMatchesItemProps) {
+export function GameListItem({match, ...touchableProps}: NextMatchesItemProps) {
   return (
-    <Box
+    <TouchableOpacityBox
+      activeOpacity={0.7}
       height={90}
       backgroundColor="grayWhite"
       borderRadius="r10"
       flexDirection="row"
-      style={$shadowProps}>
+      style={$shadowProps}
+      {...touchableProps}>
       <Box justifyContent="center" alignItems="center">
         <Box
           height={75}
@@ -33,14 +40,14 @@ export function GameListItem({}: NextMatchesItemProps) {
       <Box paddingVertical="s10" paddingLeft="s10">
         <Box flex={1}>
           <Text semibold preset="paragraphSmall" mb="s5">
-            Jogo na Curva da Jurema
+            {match.name}
           </Text>
-          <Text preset="paragraphCaption">Campeonato estadual</Text>
+          <Text preset="paragraphCaption">{match.description}</Text>
         </Box>
         <Text preset="paragraphSmall" semibold>
-          12:00 - 10 Vagas
+          12:00 - {match.vacancies} Vagas
         </Text>
       </Box>
-    </Box>
+    </TouchableOpacityBox>
   );
 }

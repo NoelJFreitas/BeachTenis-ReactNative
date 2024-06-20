@@ -10,12 +10,14 @@ interface NextMatchesProps extends BoxProps {
   onPress?: () => void;
   matches: Match[];
   isLoading: boolean;
+  scrollEnabled?: boolean;
 }
 
 export function GameList({
   emptyMessage,
   matches,
   isLoading,
+  scrollEnabled = true,
   ...boxProps
 }: NextMatchesProps) {
   function renderItem({item}: ListRenderItemInfo<Match>) {
@@ -30,7 +32,7 @@ export function GameList({
         renderItem={renderItem}
         style={$overflow}
         isLoading={isLoading}
-        scrollEnabled={false}
+        scrollEnabled={scrollEnabled}
       />
     </Box>
   );
