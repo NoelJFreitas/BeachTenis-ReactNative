@@ -12,6 +12,7 @@ export function useGetUserMatches() {
     try {
       const response = await matchesService.getUserMatches(userId!);
       setUserMatches(response);
+      console.log('teste');
       setIsLoading(true);
     } catch (erro) {
       console.log(erro);

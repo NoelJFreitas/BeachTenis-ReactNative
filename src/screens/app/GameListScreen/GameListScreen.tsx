@@ -23,6 +23,11 @@ export function GameListScreen() {
     setSelectedGame(undefined);
   }
 
+  function onSuccessRegisterInMatch() {
+    matches.getAllMatches();
+    bottomSheetRef.current?.closeBottomSheet();
+  }
+
   return (
     <Screen noPaddingHorizontal noPaddingBottom>
       <Box paddingHorizontal="s25">
@@ -41,7 +46,12 @@ export function GameListScreen() {
         ref={bottomSheetRef}
         modalTitle="Bora jogar! 🎉 "
         onCloseBottomSheet={handleCloseBottomSheet}>
-        {selectedGame && <GameDetails game={selectedGame} />}
+        {selectedGame && (
+          <GameDetails
+            game={selectedGame}
+            onPressSuccess={onSuccessRegisterInMatch}
+          />
+        )}
       </BottomSheet>
     </Screen>
   );

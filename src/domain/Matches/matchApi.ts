@@ -6,6 +6,16 @@ async function getMatches() {
   return response.data;
 }
 
+async function registerPlayerInTheMatch(matches_id: number, user_id: number) {
+  await api.post('matches/signup', {
+    matches_id,
+    player: {
+      user_id,
+    },
+  });
+}
+
 export const matchApi = {
   getMatches,
+  registerPlayerInTheMatch,
 };

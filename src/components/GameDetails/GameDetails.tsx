@@ -1,18 +1,29 @@
 import {Box, Button, PlayerList, Text} from '@components';
-import {Game} from '@domain';
+import {Game, useAddPlayerToMatch} from '@domain';
 import React from 'react';
 import {ScrollView, TextStyle} from 'react-native';
 import {UserDetails} from './components/UserDetails';
+import {useTimestamp} from '@hooks';
 
 interface GameDetails {
   game: Game;
+  onPressSuccess?: () => void;
 }
 
-export function GameDetails({game}: GameDetails) {
+export function GameDetails({game, onPressSuccess}: GameDetails) {
+  const {day, stringMonth, hour, minute} = useTimestamp(game.date);
+  const {isLoading, registerPlayerInTheMatch} = useAddPlayerToMatch({
+    onSuccess: onPressSuccess,
+  });
+
+  function onSubmitRegisterMatch() {
+    registerPlayerInTheMatch(game.id);
+  }
+
   return (
     <Box flex={1} backgroundColor="background" paddingHorizontal="s20">
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Text preset="headingMedium" style={$title} bold mb="s10">
+        <Text preset="headingLarge" style={$title} bold mb="s10">
           {game.name}
         </Text>
         <Text preset="paragraphLarge" mb="s40">
@@ -21,8 +32,14 @@ export function GameDetails({game}: GameDetails) {
 
         <UserDetails playerId={game.createdBy} mb="s40" />
 
-        <Text mb="s40" bold>
+        <Text mb="s5" bold>
           Vagas restantes: <Text>{game.vacancies}</Text>
+        </Text>
+        <Text mb="s40" bold>
+          Data:{' '}
+          <Text>
+            {day} {stringMonth} as {hour}: {minute}
+          </Text>
         </Text>
 
         <Text mb="s10" bold>
@@ -34,7 +51,12 @@ export function GameDetails({game}: GameDetails) {
           Participantes
         </Text>
         <PlayerList playerIds={game.players} mb="s40" />
-        <Button title="Inscrever-se" mb="s40" />
+        <Button
+          title="Inscrever-se"
+          mb="s40"
+          onPress={onSubmitRegisterMatch}
+          loading={isLoading}
+        />
       </ScrollView>
     </Box>
   );
