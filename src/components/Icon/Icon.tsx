@@ -23,6 +23,7 @@ import {ClipboardOutlineIcon} from '../../assets/icons/ClipboardOutlineIcon';
 import {SettingsIcon} from '../../assets/icons/SettingsIcon';
 import {HeartOutlineIcon} from '../../assets/icons/HeartOutlineIcon';
 import {LogoutIcon} from '../../assets/icons/LogoutIcon';
+import {CloseIcon} from '../../assets/icons/CloseIcon';
 
 const iconsRegistry = {
   return: ReturnIcon,
@@ -44,6 +45,7 @@ const iconsRegistry = {
   settings: SettingsIcon,
   heart: HeartOutlineIcon,
   logout: LogoutIcon,
+  close: CloseIcon,
 };
 
 export type IconNames = keyof typeof iconsRegistry;

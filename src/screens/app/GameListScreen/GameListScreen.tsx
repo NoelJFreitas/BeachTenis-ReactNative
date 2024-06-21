@@ -41,7 +41,7 @@ export function GameListScreen() {
         ref={bottomSheetRef}
         modalTitle="Bora jogar! 🎉 "
         onCloseBottomSheet={handleCloseBottomSheet}>
-        <GameDetails game={selectedGame} />
+        {selectedGame && <GameDetails game={selectedGame} />}
       </BottomSheet>
     </Screen>
   );

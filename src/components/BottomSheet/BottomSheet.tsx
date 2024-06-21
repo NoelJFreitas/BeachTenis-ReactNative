@@ -11,7 +11,7 @@ import {
   BottomSheetView,
   BottomSheetModalProvider,
 } from '@gorhom/bottom-sheet';
-import {Box, Text} from '@components';
+import {BottomSheetHeader} from './components/BottomSheetHeader';
 
 export interface BottomSheet {
   openBottomSheet: () => void;
@@ -61,14 +61,14 @@ export const BottomSheet = forwardRef<BottomSheet, Props>(
           index={3}
           containerStyle={$container}
           snapPoints={snapPoints}
-          onChange={handleSheetChanges}>
+          onChange={handleSheetChanges}
+          enableOverDrag={false}>
           <BottomSheetView style={$contentContainer}>
             {modalTitle && (
-              <Box alignItems="center" paddingBottom="s10">
-                <Text preset="paragraphSmall" semibold>
-                  {modalTitle}
-                </Text>
-              </Box>
+              <BottomSheetHeader
+                title={modalTitle}
+                onPressClose={closeBottomSheet}
+              />
             )}
             {children}
           </BottomSheetView>
