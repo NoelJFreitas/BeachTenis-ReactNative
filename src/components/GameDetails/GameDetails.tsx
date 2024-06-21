@@ -1,5 +1,5 @@
 import {Box, Button, PlayerList, Text} from '@components';
-import {Game, useAddPlayerToMatch} from '@domain';
+import {Game, useAddPlayerToMatch, useUnsubscribePlayerToMatch} from '@domain';
 import React from 'react';
 import {ScrollView, TextStyle} from 'react-native';
 import {UserDetails} from './components/UserDetails';
@@ -17,12 +17,21 @@ export function GameDetails({
   pressFunction,
 }: GameDetails) {
   const {day, stringMonth, hour, minute} = useTimestamp(game.date);
-  const {isLoading, registerPlayerInTheMatch} = useAddPlayerToMatch({
+
+  const register = useAddPlayerToMatch({
+    onSuccess: onPressSuccess,
+  });
+
+  const unsubscribe = useUnsubscribePlayerToMatch({
     onSuccess: onPressSuccess,
   });
 
   function onSubmitRegisterMatch() {
-    registerPlayerInTheMatch(game.id);
+    register.registerPlayerInTheMatch(game.id);
+  }
+
+  function onSubmitUnsubscribeMatch() {
+    unsubscribe.unsubscribePlayerTheMatch(game.id);
   }
 
   return (
@@ -62,15 +71,15 @@ export function GameDetails({
             title="Inscrever-se"
             mb="s40"
             onPress={onSubmitRegisterMatch}
-            loading={isLoading}
+            loading={register.isLoading}
           />
         )}
         {pressFunction === 'unsubscribe' && (
           <Button
             title="Cancelar inscrição"
             mb="s40"
-            onPress={onSubmitRegisterMatch}
-            loading={isLoading}
+            onPress={onSubmitUnsubscribeMatch}
+            loading={unsubscribe.isLoading}
             preset="cancel"
           />
         )}

@@ -16,8 +16,13 @@ async function registerPlayerInTheMatch(matches_id: number, user_id: number) {
   await matchApi.registerPlayerInTheMatch(matches_id, user_id);
 }
 
+async function unsubscribePlayerTheMatch(matches_id: number, user_id: number) {
+  await matchApi.unsubscribePlayerTheMatch(matches_id, user_id);
+}
+
 export const matchesService = {
   getAllMatches,
   getUserMatches,
   registerPlayerInTheMatch,
+  unsubscribePlayerTheMatch,
 };

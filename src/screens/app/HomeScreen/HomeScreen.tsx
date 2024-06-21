@@ -56,7 +56,7 @@ export function HomeScreen() {
 
       <BottomSheet
         ref={bottomSheetRef}
-        modalTitle="Bora jogar! 🎉 "
+        modalTitle="Aqui esta seu jogo campeão! 🫅"
         onCloseBottomSheet={handleCloseBottomSheet}>
         {selectedGame && (
           <GameDetails

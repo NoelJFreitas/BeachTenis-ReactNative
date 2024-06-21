@@ -14,8 +14,15 @@ async function registerPlayerInTheMatch(matches_id: number, user_id: number) {
     },
   });
 }
+async function unsubscribePlayerTheMatch(matches_id: number, user_id: number) {
+  await api.post('matches/unsubscribe', {
+    matches_id,
+    user_id,
+  });
+}
 
 export const matchApi = {
   getMatches,
   registerPlayerInTheMatch,
+  unsubscribePlayerTheMatch,
 };
