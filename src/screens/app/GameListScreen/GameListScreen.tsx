@@ -48,6 +48,7 @@ export function GameListScreen() {
         onCloseBottomSheet={handleCloseBottomSheet}>
         {selectedGame && (
           <GameDetails
+            pressFunction="register"
             game={selectedGame}
             onPressSuccess={onSuccessRegisterInMatch}
           />

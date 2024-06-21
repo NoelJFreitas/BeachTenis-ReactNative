@@ -8,9 +8,14 @@ import {useTimestamp} from '@hooks';
 interface GameDetails {
   game: Game;
   onPressSuccess?: () => void;
+  pressFunction: 'unsubscribe' | 'register';
 }
 
-export function GameDetails({game, onPressSuccess}: GameDetails) {
+export function GameDetails({
+  game,
+  onPressSuccess,
+  pressFunction,
+}: GameDetails) {
   const {day, stringMonth, hour, minute} = useTimestamp(game.date);
   const {isLoading, registerPlayerInTheMatch} = useAddPlayerToMatch({
     onSuccess: onPressSuccess,
@@ -51,12 +56,24 @@ export function GameDetails({game, onPressSuccess}: GameDetails) {
           Participantes
         </Text>
         <PlayerList playerIds={game.players} mb="s40" />
-        <Button
-          title="Inscrever-se"
-          mb="s40"
-          onPress={onSubmitRegisterMatch}
-          loading={isLoading}
-        />
+
+        {pressFunction === 'register' && (
+          <Button
+            title="Inscrever-se"
+            mb="s40"
+            onPress={onSubmitRegisterMatch}
+            loading={isLoading}
+          />
+        )}
+        {pressFunction === 'unsubscribe' && (
+          <Button
+            title="Cancelar inscrição"
+            mb="s40"
+            onPress={onSubmitRegisterMatch}
+            loading={isLoading}
+            preset="cancel"
+          />
+        )}
       </ScrollView>
     </Box>
   );

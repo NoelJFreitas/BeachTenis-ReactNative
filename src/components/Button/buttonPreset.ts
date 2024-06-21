@@ -15,4 +15,8 @@ export const buttonPresets: Record<ButtonPresets, ButtonUI> = {
     container: 'gray4',
     content: 'gray2',
   },
+  cancel: {
+    container: 'error',
+    content: 'background',
+  },
 };

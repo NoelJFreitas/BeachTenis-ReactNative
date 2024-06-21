@@ -7,21 +7,27 @@ import {
 } from '@components';
 import {buttonPresets} from './buttonPreset';
 
-export type ButtonPresets = 'default' | 'disable';
+export type ButtonPresets = 'default' | 'disable' | 'cancel';
 
 export interface ButtonProps extends TouchableOpacityBoxProps {
   title: string;
   loading?: boolean;
   disabled?: boolean;
+  preset?: Exclude<ButtonPresets, 'disable'>;
 }
 
 export function Button({
   disabled,
   title,
   loading,
+  preset = 'default',
   ...buttonProps
 }: ButtonProps) {
-  const buttonPreset = disabled ? buttonPresets.disable : buttonPresets.default;
+  const buttonPreset = disabled
+    ? buttonPresets.disable
+    : preset === 'default'
+    ? buttonPresets.default
+    : buttonPresets.cancel;
   return (
     <TouchableOpacityBox
       height={60}

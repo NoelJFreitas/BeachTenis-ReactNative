@@ -8,7 +8,11 @@ interface Props {
 
 export function ScrollViewContainer({children, backgroundColor}: Props) {
   return (
-    <ScrollView style={{backgroundColor, ...$container}}>{children}</ScrollView>
+    <ScrollView
+      style={{backgroundColor, ...$container}}
+      contentContainerStyle={$container}>
+      {children}
+    </ScrollView>
   );
 }
 
