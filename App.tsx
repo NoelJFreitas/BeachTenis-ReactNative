@@ -5,15 +5,18 @@ import {AuthenticationProvider} from '@services';
 
 import {theme} from '@theme';
 import {Routes} from '@routes';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <ThemeProvider theme={theme}>
-        <AuthenticationProvider>
-          <Routes />
-        </AuthenticationProvider>
-      </ThemeProvider>
-    </SafeAreaProvider>
+    <GestureHandlerRootView>
+      <SafeAreaProvider>
+        <ThemeProvider theme={theme}>
+          <AuthenticationProvider>
+            <Routes />
+          </AuthenticationProvider>
+        </ThemeProvider>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }

@@ -19,3 +19,4 @@ export * from './GameList/GameList';
 export * from './BottomSheet/BottomSheet';
 export * from './GameDetails/GameDetails';
 export * from './ProfileAvatar/ProfileAvatar';
+export * from './PlayerList/PlayerList';

@@ -1,18 +1,17 @@
 import {useEffect, useState} from 'react';
 import {matchesService} from '../matchesService';
 import {useAuthCredentials} from '@services';
-import {Match} from '../matchesType';
+import {Game} from '../matchesType';
 
 export function useGetAllMatches() {
   const {userId} = useAuthCredentials();
   const [isLoading, setIsLoading] = useState(true);
-  const [allMatches, setAllMatches] = useState<Match[]>([]);
+  const [allMatches, setAllMatches] = useState<Game[]>([]);
 
   async function getAllMatches() {
     try {
       const response = await matchesService.getAllMatches(userId!);
       setAllMatches(response);
-      // console.log(response);
       setIsLoading(true);
     } catch (erro) {
       console.log(erro);

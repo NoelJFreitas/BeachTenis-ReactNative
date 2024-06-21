@@ -1,12 +1,12 @@
 import {useEffect, useState} from 'react';
 import {matchesService} from '../matchesService';
 import {useAuthCredentials} from '@services';
-import {Match} from '../matchesType';
+import {Game} from '../matchesType';
 
 export function useGetUserMatches() {
   const {userId} = useAuthCredentials();
   const [isLoading, setIsLoading] = useState(false);
-  const [userMatches, setUserMatches] = useState<Match[]>([]);
+  const [userMatches, setUserMatches] = useState<Game[]>([]);
 
   async function getUserMatches() {
     try {
