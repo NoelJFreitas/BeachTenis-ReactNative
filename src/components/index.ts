@@ -16,3 +16,6 @@ export * from './Statistics/Statistics';
 export * from './Ranking/Ranking';
 export * from './FlatList/FlatList';
 export * from './GameList/GameList';
+export * from './BottomSheet/BottomSheet';
+export * from './GameDetails/GameDetails';
+export * from './ProfileAvatar/ProfileAvatar';
