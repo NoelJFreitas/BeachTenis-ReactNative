@@ -3,12 +3,12 @@ import {Box, BoxProps, FlatList} from '@components';
 
 import {ListRenderItemInfo, ViewStyle} from 'react-native';
 import {GameListItem} from './components/GameListItem';
-import {Match} from '@domain';
+import {Game} from '@domain';
 
 interface NextMatchesProps extends BoxProps {
   emptyMessage: string;
-  onPress?: () => void;
-  matches: Match[];
+  onPress?: (match: Game) => void;
+  matches: Game[];
   isLoading: boolean;
   scrollEnabled?: boolean;
 }
@@ -17,11 +17,13 @@ export function GameList({
   emptyMessage,
   matches,
   isLoading,
+  onPress,
   scrollEnabled = true,
   ...boxProps
 }: NextMatchesProps) {
-  function renderItem({item}: ListRenderItemInfo<Match>) {
-    return <GameListItem match={item} />;
+  function renderItem({item}: ListRenderItemInfo<Game>) {
+    const onPressItem = onPress ? () => onPress(item) : undefined;
+    return <GameListItem match={item} onPress={onPressItem} />;
   }
 
   return (

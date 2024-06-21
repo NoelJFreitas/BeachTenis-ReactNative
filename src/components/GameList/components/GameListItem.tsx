@@ -6,11 +6,11 @@ import {
   TouchableOpacityBoxProps,
 } from '@components';
 import {$shadowProps} from '@theme';
-import {Match} from '@domain';
+import {Game} from '@domain';
 import {useTimestamp} from '@hooks';
 
 interface NextMatchesItemProps extends TouchableOpacityBoxProps {
-  match: Match;
+  match: Game;
 }
 
 export function GameListItem({match, ...touchableProps}: NextMatchesItemProps) {

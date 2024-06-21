@@ -1,7 +1,7 @@
-import {Match, MatchesApi} from './matchesType';
+import {Game, MatchesApi} from './matchesType';
 
-function toAllMatches(data: MatchesApi[], userId: number): Match[] {
-  const matches: Match[] = [];
+function toAllMatches(data: MatchesApi[], userId: number): Game[] {
+  const matches: Game[] = [];
 
   data.map(match => {
     const userInMatch = match.players.some(player => player.user_id === userId);
@@ -25,8 +25,8 @@ function toAllMatches(data: MatchesApi[], userId: number): Match[] {
   return matches;
 }
 
-function toUserMatches(data: MatchesApi[], userId: number): Match[] {
-  const matches: Match[] = [];
+function toUserMatches(data: MatchesApi[], userId: number): Game[] {
+  const matches: Game[] = [];
   data
     .filter(match => {
       return match.players.some(player => player.user_id === userId);
