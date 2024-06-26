@@ -22,6 +22,7 @@ export function useAuthSignUp({onError, onSuccess}: Options) {
       if (isAxiosError(error)) {
         Alert.alert('Atenção', error.response?.data.message);
       } else {
+        console.log('signUp:', error);
         Alert.alert('Atenção', 'Ocorreu um erro no cadastro');
       }
 

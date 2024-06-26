@@ -23,7 +23,7 @@ export function useAuthSignIn({onSuccess}: Options) {
       saveCredentials(response);
       onSuccess ? onSuccess() : undefined;
     } catch (error) {
-      console.log(error);
+      console.log('singIn:', error);
       Alert.alert('Atenção', (error as Error).message);
     } finally {
       setIsLoading(false);

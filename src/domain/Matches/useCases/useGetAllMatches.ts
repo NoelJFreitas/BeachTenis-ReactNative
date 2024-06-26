@@ -14,7 +14,7 @@ export function useGetAllMatches() {
       setAllMatches(response);
       setIsLoading(true);
     } catch (erro) {
-      console.log(erro);
+      console.log('get all matches', erro);
     } finally {
       setIsLoading(false);
     }

@@ -21,7 +21,7 @@ export function useAddPlayerToMatch({onSuccess, onError}: Options) {
     } catch (error) {
       Alert.alert('Desculpe', 'Ocorreu um erro ao se registrar na partida');
       onError ? onError() : undefined;
-      console.log(error);
+      console.log('register in match', error);
     } finally {
       setIsLoading(false);
     }

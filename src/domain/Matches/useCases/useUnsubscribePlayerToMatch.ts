@@ -21,7 +21,7 @@ export function useUnsubscribePlayerToMatch({onSuccess, onError}: Options) {
     } catch (error) {
       Alert.alert('Desculpe', 'Ocorreu um erro ao cancelar a inscrição');
       onError ? onError() : undefined;
-      console.log(error);
+      console.log('unsubscribe match: ', error);
     } finally {
       setIsLoading(false);
     }
