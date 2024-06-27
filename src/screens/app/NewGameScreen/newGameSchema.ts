@@ -6,7 +6,7 @@ export const newGameSchema = z.object({
     .string()
     .min(4, 'Descrição muito curta')
     .max(40, 'Descrição muito extensa'),
-  description: z.string().email('Descrição inválida'),
+  description: z.string().min(5, 'Descrição muito curta'),
   vacancies: z.coerce.number().min(1, 'Vaga menor que 1'),
   local: z.string().min(1, 'Local invalido'),
   date: z.coerce.number(),

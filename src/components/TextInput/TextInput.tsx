@@ -16,12 +16,14 @@ export interface TextInputProps extends RNTextInputProps {
   boxProps?: BoxProps;
   customOnChange?: (t: string) => void;
   LeftComponent?: React.ReactNode;
+  multiline?: boolean;
 }
 
 export function TextInput({
   label,
   errorMessage,
   LeftComponent,
+  multiline,
   boxProps,
   ...rnTextInputProps
 }: TextInputProps) {
@@ -40,7 +42,7 @@ export function TextInput({
     <Box {...boxProps}>
       <Pressable onPress={focusInput}>
         <Box
-          height={60}
+          height={multiline ? 120 : 60}
           borderWidth={1}
           borderRadius="r15"
           flexDirection="row"
@@ -58,6 +60,7 @@ export function TextInput({
               {...rnTextInputProps}
               onFocus={() => setFocus(true)}
               onBlur={() => setFocus(false)}
+              multiline={multiline}
             />
           </Box>
           {LeftComponent && (

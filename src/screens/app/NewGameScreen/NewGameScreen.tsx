@@ -52,6 +52,7 @@ export function NewGameScreen() {
         control={control}
         name="description"
         label="Descrição do jogo"
+        multiline
         placeholder="Descrição do jogo"
         boxProps={{mb: 's15'}}
       />
@@ -70,13 +71,7 @@ export function NewGameScreen() {
         boxProps={{mb: 's15'}}
         keyboardType="numeric"
       />
-      <FormTextInput
-        control={control}
-        name="date"
-        label="Data do jogo"
-        placeholder="Data do jogo"
-        boxProps={{mb: 's15'}}
-      />
+
       <FormDateTimePiker
         control={control}
         label="Data do jogo"

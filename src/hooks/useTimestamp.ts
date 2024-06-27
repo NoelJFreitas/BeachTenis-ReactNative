@@ -14,7 +14,7 @@ export function useTimestamp(timestamp: number) {
 
   const day = checkZeroOnLeft(date.date());
   const stringMonth = date.format('MMMM');
-  const month = checkZeroOnLeft(date.month());
+  const month = checkZeroOnLeft(date.month() + 1);
   const year = checkZeroOnLeft(date.year());
   const hour = checkZeroOnLeft(date.hour());
   const minute = checkZeroOnLeft(date.minute());
