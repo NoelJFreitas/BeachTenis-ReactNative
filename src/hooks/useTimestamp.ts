@@ -5,11 +5,26 @@ export function useTimestamp(timestamp: number) {
   moment.locale('pt-br');
   const date = moment(timestamp);
 
+  function checkZeroOnLeft(value: number) {
+    if (value < 10) {
+      return `0${value}`;
+    }
+    return String(value);
+  }
+
+  const day = checkZeroOnLeft(date.date());
+  const stringMonth = date.format('MMMM');
+  const month = checkZeroOnLeft(date.month());
+  const year = checkZeroOnLeft(date.year());
+  const hour = checkZeroOnLeft(date.hour());
+  const minute = checkZeroOnLeft(date.minute());
+
   return {
-    day: date.date(),
-    stringMonth: date.format('MMMM'),
-    year: date.year(),
-    hour: date.hour(),
-    minute: date.minute(),
+    day,
+    stringMonth,
+    month,
+    year,
+    hour,
+    minute,
   };
 }
