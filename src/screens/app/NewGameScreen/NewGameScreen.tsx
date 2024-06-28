@@ -24,6 +24,7 @@ export function NewGameScreen() {
   const {isLoading, crateNewMatch} = useCreateNewMatch({
     onSuccess: () => reset(),
   });
+
   const {control, formState, handleSubmit, reset} = useForm<NewGameSchema>({
     resolver: zodResolver(newGameSchema),
     defaultValues: defaultValues,
