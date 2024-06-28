@@ -5,14 +5,14 @@ import {Game} from '../matchesType';
 
 export function useGetUserMatches() {
   const {userId} = useAuthCredentials();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [userMatches, setUserMatches] = useState<Game[]>([]);
 
   async function getUserMatches() {
     try {
+      setIsLoading(true);
       const response = await matchesService.getUserMatches(userId!);
       setUserMatches(response);
-      setIsLoading(true);
     } catch (erro) {
       console.log('get user matches:', erro);
     } finally {

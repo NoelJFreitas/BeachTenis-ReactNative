@@ -23,3 +23,5 @@ export interface MatchesApi {
     user_id: number;
   }[];
 }
+
+export interface NewMatch extends Omit<MatchesApi, 'id' | 'players'> {}

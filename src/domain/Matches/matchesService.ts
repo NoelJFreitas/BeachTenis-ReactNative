@@ -1,3 +1,4 @@
+import {NewGameSchema} from '@screens';
 import {matchApi} from './matchApi';
 import {matchesAdapter} from './matchesAdapter';
 import {Game} from './matchesType';
@@ -20,9 +21,14 @@ async function unsubscribePlayerTheMatch(matches_id: number, user_id: number) {
   await matchApi.unsubscribePlayerTheMatch(matches_id, user_id);
 }
 
+async function createNewMatch(newMatch: NewGameSchema, userId: number) {
+  await matchApi.createNewMatch(matchesAdapter.toNewMatch(newMatch, userId));
+}
+
 export const matchesService = {
   getAllMatches,
   getUserMatches,
   registerPlayerInTheMatch,
   unsubscribePlayerTheMatch,
+  createNewMatch,
 };

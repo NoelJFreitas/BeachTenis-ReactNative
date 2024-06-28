@@ -1,5 +1,5 @@
 import {api} from '@api';
-import {MatchesApi} from './matchesType';
+import {MatchesApi, NewMatch} from './matchesType';
 
 async function getMatches() {
   const response = await api.get<MatchesApi[]>('/matches');
@@ -14,6 +14,7 @@ async function registerPlayerInTheMatch(matches_id: number, user_id: number) {
     },
   });
 }
+
 async function unsubscribePlayerTheMatch(matches_id: number, user_id: number) {
   await api.post('matches/unsubscribe', {
     matches_id,
@@ -21,8 +22,13 @@ async function unsubscribePlayerTheMatch(matches_id: number, user_id: number) {
   });
 }
 
+async function createNewMatch(newMatch: NewMatch) {
+  await api.post<NewMatch>('/matches', newMatch);
+}
+
 export const matchApi = {
   getMatches,
   registerPlayerInTheMatch,
   unsubscribePlayerTheMatch,
+  createNewMatch,
 };

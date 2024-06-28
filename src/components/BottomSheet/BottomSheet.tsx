@@ -27,7 +27,7 @@ interface Props {
 export const BottomSheet = forwardRef<BottomSheet, Props>(
   ({children, onCloseBottomSheet, modalTitle}, ref) => {
     const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-    const snapPoints = useMemo(() => ['25%', '40%', '60%', '90%'], []);
+    const snapPoints = useMemo(() => ['25%', '40%', '60%', '80%'], []);
 
     useImperativeHandle(ref, () => ({
       openBottomSheet,

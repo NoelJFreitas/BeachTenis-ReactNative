@@ -31,28 +31,30 @@ export function HomeScreen() {
   }
 
   return (
-    <Screen scrollable noPaddingBottom noPaddingHorizontal>
-      <Box paddingHorizontal="s25" flex={1}>
-        <Text textAlign="center" preset="paragraphLarge" bold mb="s20">
-          Meus Dados
-        </Text>
-        <Statistics mb="s40" />
-        <Text semibold mb="s15">
-          Top 5 Jogadores
-        </Text>
-        <Ranking mb="s40" />
-        <Text semibold mb="s15">
-          Seus Jogos
-        </Text>
+    <Box flex={1}>
+      <Screen scrollable noPaddingBottom noPaddingHorizontal>
+        <Box paddingHorizontal="s25" flex={1} paddingBottom="s20">
+          <Text textAlign="center" preset="paragraphLarge" bold mb="s20">
+            Meus Dados
+          </Text>
+          <Statistics mb="s40" />
+          <Text semibold mb="s15">
+            Top 5 Jogadores
+          </Text>
+          <Ranking mb="s40" />
+          <Text semibold mb="s15">
+            Seus Jogos
+          </Text>
 
-        <GameList
-          matches={matches.userMatches}
-          scrollEnabled={false}
-          isLoading={matches.isLoading}
-          emptyMessage="Suas inscrições de jogos aparecerão aqui"
-          onPress={handleOnPressItem}
-        />
-      </Box>
+          <GameList
+            matches={matches.userMatches}
+            scrollEnabled={false}
+            isLoading={matches.isLoading}
+            emptyMessage="Suas inscrições de jogos aparecerão aqui"
+            onPress={handleOnPressItem}
+          />
+        </Box>
+      </Screen>
 
       <BottomSheet
         ref={bottomSheetRef}
@@ -66,6 +68,6 @@ export function HomeScreen() {
           />
         )}
       </BottomSheet>
-    </Screen>
+    </Box>
   );
 }

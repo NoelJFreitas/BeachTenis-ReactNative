@@ -9,23 +9,29 @@ import {
 import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {NewGameSchema, newGameSchema} from './newGameSchema';
+import {useCreateNewMatch} from '@domain';
+
+const defaultValues = {
+  gameName: '',
+  shortDescription: '',
+  description: '',
+  local: '',
+  vacancies: 0,
+  date: new Date().getTime(),
+};
 
 export function NewGameScreen() {
-  const {control, formState, handleSubmit} = useForm<NewGameSchema>({
+  const {isLoading, crateNewMatch} = useCreateNewMatch({
+    onSuccess: () => reset(),
+  });
+  const {control, formState, handleSubmit, reset} = useForm<NewGameSchema>({
     resolver: zodResolver(newGameSchema),
-    defaultValues: {
-      gameName: '',
-      shortDescription: '',
-      description: '',
-      local: '',
-      vacancies: 0,
-      date: new Date().getTime(),
-    },
+    defaultValues: defaultValues,
     mode: 'onChange',
   });
 
   async function submitForm(newGame: NewGameSchema) {
-    console.log(newGame);
+    crateNewMatch(newGame);
   }
 
   return (
@@ -81,6 +87,7 @@ export function NewGameScreen() {
       <Button
         title="Cadastrar"
         disabled={!formState.isValid}
+        loading={isLoading}
         onPress={handleSubmit(submitForm)}
       />
     </Screen>
